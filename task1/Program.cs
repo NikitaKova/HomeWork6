@@ -1,8 +1,7 @@
-﻿// Задача 1: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь. Разделить ввод данных, от расчета данных (Одна функция вводит данные, другая функция подсчитывает количество положительных)
+﻿// Задача 1: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь. 
+//Разделить ввод данных, от расчета данных (Одна функция вводит данные, другая функция подсчитывает количество положительных)
 // 0, 7, 8, -2, -2 -> 2
 // 1, -7, 567, 89, 223-> 3
-
-
 
 int[] InputNum(int len)
 {
@@ -20,15 +19,19 @@ numbers[4] = Convert.ToInt32(Console.ReadLine());
 return numbers;
 }
 
-
-
-int count = 0;      
- if(InputNum < 0)
+int SumNum(int[] num)
+{
+    int count = 0;
+    for (int i = 0; i < num.Length; i++)
     {
-        count++;
+        if (num[i] > 0)
+        {
+            count++;
+        }
     }
-return count;
+    return count;
+}
 
 int[] num = InputNum(5);
-int[] result = SumNum(int[] num);
-System.Console.WriteLine($"{result}");
+int result = SumNum(num);
+System.Console.WriteLine($"Сколько чисел больше 0: {result}");
